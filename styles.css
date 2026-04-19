@@ -371,7 +371,10 @@ body {
   border: 1px solid var(--glass-border);
 }
 .step-arrow { font-size: 24px; color: var(--text-muted); }
-.install-cta { text-align: center; margin-top: var(--sp-9); }
+.step-card-download { text-align: left; flex: 1.4; }
+.step-card-download .step-num { margin: 0 0 var(--sp-4) 0; }
+.step-card-body { display: flex; flex-direction: column; gap: var(--sp-3); }
+.step-card-body .btn-download { align-self: flex-start; margin-top: var(--sp-2); }
 
 /* -- footer -- */
 .footer {
