@@ -377,9 +377,24 @@ body {
 .stat-label { font-size: 13px; color: var(--text-muted); margin-top: var(--sp-2); }
 
 /* -- install steps -- */
-.install-steps { display: flex; align-items: center; justify-content: center; gap: var(--sp-6); }
+.install-steps { display: flex; align-items: flex-end; justify-content: center; gap: var(--sp-6); }
 .step-card { padding: var(--sp-7); text-align: center; flex: 1; max-width: 280px; }
 .step-card:hover { transform: translateY(-4px); }
+
+/* descending scale ~ 1 largest, 2 medium, 3 compact */
+.install-steps .step-card:nth-child(1) { transform-origin: bottom center; }
+.install-steps .step-card:nth-child(3) { padding: var(--sp-6); max-width: 240px; }
+.install-steps .step-card:nth-child(3) .step-num { width: 34px; height: 34px; font-size: 15px; }
+.install-steps .step-card:nth-child(3) .step-title { font-size: 14px; }
+.install-steps .step-card:nth-child(3) .step-desc { font-size: 12px; }
+.install-steps .step-card:nth-child(5) { padding: var(--sp-5); max-width: 200px; }
+.install-steps .step-card:nth-child(5) .step-num { width: 28px; height: 28px; font-size: 13px; }
+.install-steps .step-card:nth-child(5) .step-title { font-size: 13px; }
+.install-steps .step-card:nth-child(5) .step-desc { font-size: 11px; }
+
+/* arrows also scale down */
+.install-steps .step-arrow:nth-child(2) { font-size: 22px; }
+.install-steps .step-arrow:nth-child(4) { font-size: 18px; opacity: 0.6; }
 .step-num {
   width: 40px; height: 40px; border-radius: 50%; margin: 0 auto var(--sp-4);
   background: linear-gradient(var(--grad-angle), var(--brand-500), var(--accent-blue));
