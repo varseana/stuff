@@ -238,6 +238,11 @@ body {
   border-radius: var(--radius-sm); box-shadow: 0 4px 20px rgba(124,92,252,0.35);
   width: var(--btn-w);
 }
+.btn-download.btn-sm {
+  --btn-w: 170px;
+  font-size: 12px; padding: var(--sp-2) var(--sp-5); margin-top: var(--sp-4);
+  box-shadow: 0 2px 12px rgba(124,92,252,0.25);
+}
 .btn-download:hover {
   background-image: linear-gradient(
     to right,
@@ -377,24 +382,9 @@ body {
 .stat-label { font-size: 13px; color: var(--text-muted); margin-top: var(--sp-2); }
 
 /* -- install steps -- */
-.install-steps { display: flex; align-items: flex-end; justify-content: center; gap: var(--sp-6); }
+.install-steps { display: flex; align-items: center; justify-content: center; gap: var(--sp-6); }
 .step-card { padding: var(--sp-7); text-align: center; flex: 1; max-width: 280px; }
 .step-card:hover { transform: translateY(-4px); }
-
-/* descending scale ~ 1 largest, 2 medium, 3 compact */
-.install-steps .step-card:nth-child(1) { transform-origin: bottom center; }
-.install-steps .step-card:nth-child(3) { padding: var(--sp-6); max-width: 240px; }
-.install-steps .step-card:nth-child(3) .step-num { width: 34px; height: 34px; font-size: 15px; }
-.install-steps .step-card:nth-child(3) .step-title { font-size: 14px; }
-.install-steps .step-card:nth-child(3) .step-desc { font-size: 12px; }
-.install-steps .step-card:nth-child(5) { padding: var(--sp-5); max-width: 200px; }
-.install-steps .step-card:nth-child(5) .step-num { width: 28px; height: 28px; font-size: 13px; }
-.install-steps .step-card:nth-child(5) .step-title { font-size: 13px; }
-.install-steps .step-card:nth-child(5) .step-desc { font-size: 11px; }
-
-/* arrows also scale down */
-.install-steps .step-arrow:nth-child(2) { font-size: 22px; }
-.install-steps .step-arrow:nth-child(4) { font-size: 18px; opacity: 0.6; }
 .step-num {
   width: 40px; height: 40px; border-radius: 50%; margin: 0 auto var(--sp-4);
   background: linear-gradient(var(--grad-angle), var(--brand-500), var(--accent-blue));
@@ -408,10 +398,6 @@ body {
   border: 1px solid var(--glass-border);
 }
 .step-arrow { font-size: 24px; color: var(--text-muted); }
-.step-card-download { text-align: center; flex: 1.4; }
-.step-card-download .step-num { margin: 0 auto var(--sp-4); }
-.step-card-body { display: flex; flex-direction: column; align-items: center; gap: var(--sp-3); }
-.step-card-body .btn-download { margin-top: var(--sp-2); }
 
 /* -- footer -- */
 .footer {
