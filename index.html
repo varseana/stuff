@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STAR Tools</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- floating particles -->
+<div class="particles" id="particles"></div>
+
+<!-- ambient blobs -->
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
+
+<!-- nav -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <img src="star-icon.png" alt="STAR Tools Icon" class="nav-logo">
+      <span class="nav-title">STAR Tools</span>
+    </div>
+    <div class="nav-links">
+      <a href="#tools" class="nav-link">Tools</a>
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#stats" class="nav-link">Stats</a>
+      <a href="#install" class="nav-link">Install</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-icon sun">&#9788;</span>
+      <span class="theme-icon moon">&#9790;</span>
+    </button>
+  </div>
+</nav>
+
+<!-- hero -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Chrome Extensions for Paragon</div>
+    <h1 class="hero-title">
+      <img src="star-icon.png" alt="STAR Tools Icon" class="hero-icon">
+      <span class="gradient-text">STAR Tools</span>
+    </h1>
+    <p class="hero-subtitle">Intelligent case tracking, real-time AHT monitoring, and smart annotations. Built for investigators who move fast.</p>
+    <div class="hero-actions">
+      <a href="#install" class="btn btn-primary">
+        <span>Get Started</span>
+        <span class="btn-arrow">&rarr;</span>
+      </a>
+      <a href="#tools" class="btn btn-glass">
+        <span>Explore Tools</span>
+      </a>
+    </div>
+    <div class="hero-version">
+      <span class="version-dot"></span>
+      v3.6 Tracker &middot; v1.6 Annotations
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="glass-card hero-card hero-card-1">
+      <div class="card-accent"></div>
+      <div class="card-icon">&#9201;</div>
+      <div class="card-timer">04:32</div>
+      <div class="card-label">Active Case Timer</div>
+      <div class="card-bar"><div class="card-bar-fill" style="width:65%"></div></div>
+    </div>
+    <div class="glass-card hero-card hero-card-2">
+      <div class="card-accent accent-green"></div>
+      <div class="card-icon">&#9998;</div>
+      <div class="card-mini-title">Quick Annotation</div>
+      <div class="card-tags">
+        <span class="tag tag-grnt">GRNT</span>
+        <span class="tag tag-nogrnt">NOGRNT</span>
+        <span class="tag tag-misc">Misc</span>
+      </div>
+    </div>
+    <div class="glass-card hero-card hero-card-3">
+      <div class="card-accent accent-purple"></div>
+      <div class="card-stat-row">
+        <span class="card-stat-num" data-target="142">0</span>
+        <span class="card-stat-label">cases today</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- tools section -->
+<section class="section" id="tools">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">The Suite</span>
+      <h2 class="section-title">Two tools. <span class="gradient-text">One mission.</span></h2>
+      <p class="section-desc">Purpose-built Chrome extensions that integrate directly into Paragon NA and EU.</p>
+    </div>
+    <div class="tools-grid">
+      <!-- tracker card -->
+      <div class="glass-card tool-card" id="trackerCard">
+        <div class="card-accent accent-blue"></div>
+        <div class="tool-header">
+          <div class="tool-icon-wrap">
+            <img src="star-tracker-icon.png" alt="STAR Tracker Icon" class="tool-header-icon">
+          </div>
+          <div>
+            <h3 class="tool-name">STAR Tracker</h3>
+            <span class="tool-version">v3.6</span>
+          </div>
+        </div>
+        <img src="star-tracker-screenshot.png" alt="STAR Tracker dashboard showing live AHT timer and case stats" class="tool-screenshot">
+        <p class="tool-desc">Real-time AHT tracking with a floating widget, multi-profile dashboards, auto-detection of queues, and dark mode for Paragon. Your cases, your pace.</p>
+        <ul class="tool-features">
+          <li><span class="feat-icon">&#10003;</span> Live AHT timer with color-coded thresholds</li>
+          <li><span class="feat-icon">&#10003;</span> Floating AHT widget on every page</li>
+          <li><span class="feat-icon">&#10003;</span> Paragon dark mode</li>
+          <li><span class="feat-icon">&#10003;</span> Auto-accept cases</li>
+          <li><span class="feat-icon">&#10003;</span> Auto-clean missed contacts</li>
+          <li><span class="feat-icon">&#10003;</span> Auto-open attachments</li>
+          <li><span class="feat-icon">&#10003;</span> Keyword alerts</li>
+        </ul>
+      </div>
+      <!-- annotations card -->
+      <div class="glass-card tool-card" id="annotationsCard">
+        <div class="card-accent accent-emerald"></div>
+        <div class="tool-header">
+          <div class="tool-icon-wrap icon-emerald">
+            <img src="star-annotations-icon.png" alt="STAR Annotations Icon" class="tool-header-icon">
+          </div>
+          <div>
+            <h3 class="tool-name">STAR Annotations</h3>
+            <span class="tool-version">v1.6</span>
+          </div>
+        </div>
+        <img src="star-annotations-screenshot.png" alt="STAR Annotations editor with category-based annotation insertion" class="tool-screenshot">
+        <p class="tool-desc">Smart annotation injection for Paragon cases. Categorize findings with a visual editor and one-click insertion into any case.</p>
+        <ul class="tool-features">
+          <li><span class="feat-icon">&#10003;</span> Category-based annotations (Grant, No Grant, Miscellaneous)</li>
+          <li><span class="feat-icon">&#10003;</span> Visual rich-text editor with one-click insertion</li>
+          <li><span class="feat-icon">&#10003;</span> Folder organization within each category for better structure</li>
+          <li><span class="feat-icon">&#10003;</span> Autofill for Grant emails</li>
+          <li><span class="feat-icon">&#10003;</span> Autofill for dates and tracking numbers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- features -->
+<section class="section section-alt" id="features">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Why STAR</span>
+      <h2 class="section-title">Built for <span class="gradient-text">speed and clarity</span></h2>
+    </div>
+    <div class="features-grid">
+      <div class="glass-card feature-card">
+        <div class="feature-icon">&#9889;</div>
+        <h4 class="feature-name">Zero Config</h4>
+        <p class="feature-desc">Install the extension, open Paragon, and it just works. Auto-detects your queue and profile instantly.</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="feature-icon">&#127760;</div>
+        <h4 class="feature-name">All Regions</h4>
+        <p class="feature-desc">Full support for all Paragon regions and time zones. Same tools, same experience, everywhere.</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="feature-icon">&#127912;</div>
+        <h4 class="feature-name">Dark Mode</h4>
+        <p class="feature-desc">One toggle inverts Paragon's blinding white into a comfortable dark theme. Your eyes will thank you.</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="feature-icon">&#128202;</div>
+        <h4 class="feature-name">Live Dashboard</h4>
+        <p class="feature-desc">Real-time stats per profile. Cases completed, average AHT, daily trends. All in a compact popup.</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="feature-icon">&#128268;</div>
+        <h4 class="feature-name">Extensible Profiles</h4>
+        <p class="feature-desc">Add new queue profiles with a simple template system: config, detector, popup. Plug and play.</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="feature-icon">&#128274;</div>
+        <h4 class="feature-name">Local Storage</h4>
+        <p class="feature-desc">All data stays in your browser. No external servers, no tracking, no data leaving your machine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- stats -->
+<section class="section" id="stats">
+  <div class="container">
+    <div class="stats-row stats-row-3">
+      <div class="glass-card stat-card">
+        <div class="stat-number" data-target="2">0</div>
+        <div class="stat-label">Chrome Extensions</div>
+      </div>
+      <div class="glass-card stat-card">
+        <div class="stat-number stat-text">All</div>
+        <div class="stat-label">Paragon Regions</div>
+      </div>
+      <div class="glass-card stat-card">
+        <div class="stat-number" data-target="0">0</div>
+        <div class="stat-label">External Dependencies</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- install -->
+<section class="section section-alt" id="install">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Get Started</span>
+      <h2 class="section-title">Install in <span class="gradient-text">30 seconds</span></h2>
+    </div>
+    <div class="install-steps">
+      <div class="glass-card step-card">
+        <div class="step-num">1</div>
+        <h4 class="step-title">Download</h4>
+        <p class="step-desc">Download the latest release ZIP from the STAR Tools repository.</p>
+      </div>
+      <div class="step-arrow">&rarr;</div>
+      <div class="glass-card step-card">
+        <div class="step-num">2</div>
+        <h4 class="step-title">Unzip</h4>
+        <p class="step-desc">Extract each extension folder (STAR-Tracker, STAR-Annotations) to a local directory.</p>
+      </div>
+      <div class="step-arrow">&rarr;</div>
+      <div class="glass-card step-card">
+        <div class="step-num">3</div>
+        <h4 class="step-title">Load</h4>
+        <p class="step-desc">Open <code>chrome://extensions</code>, enable Developer Mode, click "Load unpacked" and select each folder.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+       <img src="star-icon.png" alt="STAR Tools Icon" class="nav-logo">
+      <span>STAR Tools</span>
+    </div>
+    <div class="footer-copy">Built with precision. No fluff, no bloat, just logical stuff that work.</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
