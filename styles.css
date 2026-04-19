@@ -232,12 +232,34 @@ body {
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(124,92,252,0.45); }
 .btn-download {
-  background: linear-gradient(var(--grad-angle), var(--brand-400), var(--accent-blue), var(--accent-emerald));
-  background-size: 200% 200%; animation: gradShift 4s ease infinite;
+  --btn-w: 220px;
+  background: linear-gradient(var(--grad-angle), var(--brand-500), var(--accent-blue));
   color: #fff; font-size: 16px; padding: var(--sp-4) var(--sp-8);
   border-radius: var(--radius-sm); box-shadow: 0 4px 20px rgba(124,92,252,0.35);
+  width: var(--btn-w);
 }
-.btn-download:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(124,92,252,0.5); }
+.btn-download:hover {
+  background-image: linear-gradient(
+    to right,
+    var(--brand-400),
+    var(--brand-400) 16.65%,
+    var(--accent-blue) 16.65%,
+    var(--accent-blue) 33.3%,
+    var(--accent-emerald) 33.3%,
+    var(--accent-emerald) 49.95%,
+    var(--brand-400) 49.95%,
+    var(--brand-400) 66.6%,
+    var(--accent-rose) 66.6%,
+    var(--accent-rose) 83.25%,
+    var(--accent-amber) 83.25%,
+    var(--accent-amber) 100%,
+    var(--brand-400) 100%
+  );
+  animation: btnSlide 2s linear infinite;
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 32px rgba(124,92,252,0.5);
+}
+@keyframes btnSlide { to { background-position: var(--btn-w); } }
 .btn-arrow { transition: transform 0.15s; }
 .btn-primary:hover .btn-arrow { transform: translateX(4px); }
 .btn-glass {
