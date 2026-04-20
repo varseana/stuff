@@ -401,6 +401,7 @@ body {
 .feature-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; transform: translateZ(10px); }
 
 /* -- stats -- */
+#stats { padding: 96px 0; }
 .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-6); }
 .stats-row-3 { grid-template-columns: repeat(3, 1fr); }
 .stat-card { padding: var(--sp-7) var(--sp-5); text-align: center; }
@@ -414,6 +415,7 @@ body {
 .stat-label { font-size: 13px; color: var(--text-muted); margin-top: var(--sp-2); }
 
 /* -- install steps -- */
+#install { padding: 96px 0; }
 .install-steps { display: flex; align-items: center; justify-content: center; gap: var(--sp-6); }
 .step-card { padding: var(--sp-7); text-align: center; flex: 1; max-width: 280px; }
 .step-card:hover { transform: translateY(-4px); }
