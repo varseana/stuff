@@ -297,7 +297,12 @@ body {
 
 /* hero visual */
 .hero-visual { flex: 1; max-width: 420px; position: relative; min-height: 360px; }
-.hero-card { padding: var(--sp-5); position: absolute; }
+.hero-card { padding: var(--sp-2); position: absolute; }
+.hero-gif {
+  display: block; width: 100%; height: auto;
+  border-radius: calc(var(--radius-md) - 2px);
+  object-fit: cover;
+}
 .hero-card-1 {
   top: 0; left: 0; width: 240px;
   animation: float 5s ease-in-out infinite;
