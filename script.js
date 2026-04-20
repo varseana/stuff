@@ -67,13 +67,34 @@ for (let i = 0; i < 30; i++) {
   pc.appendChild(d);
 }
 
-// scroll spy for nav links
+// scroll spy with glow glider
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
+const glider = document.getElementById('navGlider');
+
+function moveGlider(link) {
+  if (!link || !glider) return;
+  const r = link.getBoundingClientRect();
+  const pr = link.parentElement.getBoundingClientRect();
+  glider.style.left = (r.left - pr.left) + 'px';
+  glider.style.width = r.width + 'px';
+  glider.classList.add('visible');
+}
+
 window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) current = s.id; });
   navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+  const active = document.querySelector('.nav-link.active');
+  if (active) moveGlider(active); else glider.classList.remove('visible');
+});
+
+navLinks.forEach(l => {
+  l.addEventListener('mouseenter', () => moveGlider(l));
+  l.addEventListener('mouseleave', () => {
+    const active = document.querySelector('.nav-link.active');
+    if (active) moveGlider(active); else glider.classList.remove('visible');
+  });
 });
 
 // vanilla tilt for feature cards (compact)
