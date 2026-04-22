@@ -130,8 +130,10 @@ body {
 
 /* -- content -- */
 .content {
-  margin-left: var(--sidebar-w); flex: 1; max-width: 880px;
-  padding: var(--sp-8) var(--sp-8) var(--sp-10);
+  flex: 1; max-width: 880px;
+  margin-left: var(--sidebar-w); margin-right: auto;
+  padding: var(--sp-8);
+  padding-left: max(var(--sp-8), calc((100vw - var(--sidebar-w) - 880px) / 2));
 }
 
 /* -- doc hero -- */
