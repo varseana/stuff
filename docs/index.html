@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STAR Tools ~ Documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<!-- nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-brand">
+      <img src="../star-icon.png" alt="STAR" class="nav-logo">
+      <span class="nav-title">STAR Tools</span>
+      <span class="nav-sep">/</span>
+      <span class="nav-sub">Docs</span>
+    </a>
+    <div class="nav-right">
+      <span class="nav-version">v3.6</span>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="t-icon sun">&#9788;</span>
+        <span class="t-icon moon">&#9790;</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="layout">
+  <!-- sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Getting Started</div>
+      <a href="#overview" class="sidebar-link active">Overview</a>
+      <a href="#install" class="sidebar-link">Installation</a>
+      <a href="#profiles" class="sidebar-link">Profiles</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">STAR Tracker</div>
+      <a href="#tracker-core" class="sidebar-link">Core Tracking</a>
+      <a href="#tracker-dashboard" class="sidebar-link">Dashboard</a>
+      <a href="#tracker-widget" class="sidebar-link">Floating Widget</a>
+      <a href="#tracker-settings" class="sidebar-link">Settings</a>
+      <a href="#tracker-darkmode" class="sidebar-link">Dark Mode</a>
+      <a href="#tracker-auto" class="sidebar-link">Auto Features</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Quality of Life</div>
+      <a href="#qol-badge" class="sidebar-link">Marketplace Badge</a>
+      <a href="#qol-autotools" class="sidebar-link">Auto-Open Tools</a>
+      <a href="#qol-keywords" class="sidebar-link">Keyword Alerts</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">STAR Annotations</div>
+      <a href="#annotations-overview" class="sidebar-link">Overview</a>
+      <a href="#annotations-editor" class="sidebar-link">Button Editor</a>
+      <a href="#annotations-tracking" class="sidebar-link">Tracking Auto-Fill</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Reference</div>
+      <a href="#changelog" class="sidebar-link">Changelog</a>
+      <a href="#architecture" class="sidebar-link">Architecture</a>
+      <a href="#storage" class="sidebar-link">Storage Keys</a>
+    </div>
+  </aside>
+
+  <!-- main content -->
+  <main class="content">
+
+    <!-- overview -->
+    <section id="overview">
+      <div class="doc-hero">
+        <h1>STAR Tools Documentation</h1>
+        <p class="doc-hero-sub">Everything you need to know about STAR Tracker and STAR Annotations. Built for SAFE-T, SSR, and PAT investigators on Paragon.</p>
+        <div class="doc-hero-meta">
+          <span class="meta-tag">Chrome Extension</span>
+          <span class="meta-tag">Manifest V3</span>
+          <span class="meta-tag">Vanilla JS</span>
+          <span class="meta-tag">Zero Dependencies</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>What is STAR Tools?</h2>
+        <p>STAR Tools is a suite of Chrome extensions built for claim investigators on Paragon. It consists of two independent extensions:</p>
+        <div class="two-col">
+          <div class="mini-card">
+            <div class="mini-icon">
+              <img src="../star-tracker-icon.png" alt="Tracker" class="mini-img">
+            </div>
+            <h4>STAR Tracker</h4>
+            <p>Automatic AHT tracking per queue, per marketplace. Real-time dashboard, floating widget, agent status monitoring, and quality-of-life automations.</p>
+          </div>
+          <div class="mini-card">
+            <div class="mini-icon">
+              <img src="../star-annotations-icon.png" alt="Annotations" class="mini-img">
+            </div>
+            <h4>STAR Annotations</h4>
+            <p>One-click annotation injection for Paragon cases. Category-based buttons, folder organization, email auto-fill, and tracking data capture.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- install -->
+    <section id="install">
+      <div class="card">
+        <h2>Installation</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Download the bundle</h4>
+              <p>Get the latest <code>STAR-Tools-Bundle.zip</code> from the landing page or your team's shared drive.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Extract the folders</h4>
+              <p>Unzip to get two folders: <code>STAR-Tracker/</code> and <code>STAR-Annotations/</code></p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>Load in Chrome</h4>
+              <p>Go to <code>chrome://extensions</code>, enable Developer Mode, click "Load unpacked" and select each folder.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h4>Select your profile</h4>
+              <p>Click the STAR Tracker icon and choose your profile: SAFE-T, SSR, or PAT. Open Paragon and start investigating.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- profiles -->
+    <section id="profiles">
+      <div class="card">
+        <h2>Profiles</h2>
+        <p>STAR Tracker supports three independent profiles. Each has its own queue map, dashboard, settings, and detector. Switching profiles is instant via the launcher.</p>
+        <table class="doc-table">
+          <thead>
+            <tr><th>Profile</th><th>Program</th><th>Queues</th><th>Marketplaces</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="badge badge-blue">SAFE-T</span></td><td>Seller Assurance for E-commerce Transactions</td><td>~50</td><td>6 (NA, UK, IN, BR, MX, ES)</td></tr>
+            <tr><td><span class="badge badge-green">SSR</span></td><td>Seller Support Requests</td><td>~184</td><td>21</td></tr>
+            <tr><td><span class="badge badge-purple">PAT</span></td><td>Product Authenticity</td><td>~898</td><td>23</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- tracker core -->
+    <section id="tracker-core">
+      <div class="card">
+        <h2>Core Tracking</h2>
+        <p>STAR Tracker automatically detects when a case starts and ends in Paragon, measuring the exact handle time per queue.</p>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">Case Detection</div>
+            <div class="info-value">MutationObserver on <code>kat-card#taskItem</code> elements in the lobby</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Queue Detection</div>
+            <div class="info-value">Regex on CTPS iframe header text + backup from <code>#queue_name</code> hidden inputs</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Timer</div>
+            <div class="info-value"><code>Date.now()</code> based, offset by Paragon's displayed timer</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Case End</div>
+            <div class="info-value">Card disappearance + Submit button click (5s merge window)</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Discards</div>
+            <div class="info-value">Cases &lt; 10s ignored. SAFE-T &gt; 1hr ignored (SSR/PAT no limit)</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Storage</div>
+            <div class="info-value">Stats per queue, daily history, case log with timestamps</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- dashboard -->
+    <section id="tracker-dashboard">
+      <div class="card">
+        <h2>Dashboard</h2>
+        <p>The popup dashboard shows live stats grouped by marketplace. Click any MP header to collapse/expand. Navigate between dates to view historical data.</p>
+        <ul class="feature-list">
+          <li>Queues grouped by marketplace with color-coded headers</li>
+          <li>Live case count, total time, and average AHT per queue</li>
+          <li>Recent Cases panel (last 5 cases with queue, time, case ID)</li>
+          <li>Date navigation for historical stats</li>
+          <li>Export: CSV with daily stats, aux time, and case log</li>
+          <li>Import: accepts export format and backup format, merges with existing data</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- widget -->
+    <section id="tracker-widget">
+      <div class="card">
+        <h2>Floating Widget</h2>
+        <p>A compact floating timer visible on every page when a profile is active. Shows the current case queue, label, flag, target time, and live aux status.</p>
+        <ul class="feature-list">
+          <li>Draggable — position cached in storage</li>
+          <li>Open/closed state persisted across page loads</li>
+          <li>Lite mode: simplified styling, 3s update interval</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- settings -->
+    <section id="tracker-settings">
+      <div class="card">
+        <h2>Settings</h2>
+        <p>Four collapsible sections for full customization:</p>
+        <div class="accordion">
+          <div class="acc-item">
+            <div class="acc-header">Personalize</div>
+            <div class="acc-body">Lite mode toggle, background gradient colors, banner image/color, marketplace folder colors. Lite mode disables all glass effects for low-end PCs.</div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header">History</div>
+            <div class="acc-body">Save daily history toggle, recent cases toggle, import/export stats as CSV backup.</div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header">Queue List</div>
+            <div class="acc-body">Import/export queues as CSV. Add, edit, delete individual queues. Format: MP, Queue Email, Label, Target Minutes.</div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header">Additional Quality of Life</div>
+            <div class="acc-body">Marketplace Badge, Auto-Open Tools, and Keyword Alerts. See dedicated sections below.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- dark mode -->
+    <section id="tracker-darkmode">
+      <div class="card">
+        <h2>Paragon Dark Mode</h2>
+        <p>One toggle inverts Paragon's entire UI into a dark theme using CSS <code>filter: invert(1) hue-rotate(180deg)</code>. Images and videos are re-inverted to preserve their original colors.</p>
+      </div>
+    </section>
+
+    <!-- auto features -->
+    <section id="tracker-auto">
+      <div class="card">
+        <h2>Auto Features</h2>
+        <table class="doc-table">
+          <thead><tr><th>Feature</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td>Auto-Accept</td><td>Automatically clicks the Accept button when a case arrives</td></tr>
+            <tr><td>Auto-Clean</td><td>Clears missed contact notifications</td></tr>
+            <tr><td>Auto-Increment</td><td>Clicks the Increase Task button</td></tr>
+            <tr><td>Auto-Open Attachments</td><td>Opens seller attachment links in new tabs automatically</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- qol badge -->
+    <section id="qol-badge">
+      <div class="card">
+        <div class="card-new">New in v3.6</div>
+        <h2>Marketplace Badge</h2>
+        <p>A colored badge with the marketplace code (US, UK, DE, IN, etc.) displayed next to the queue name in the case header. Provides instant visual awareness of which marketplace the current case belongs to.</p>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">Marketplaces</div>
+            <div class="info-value">23 supported, each with a unique color</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Colors</div>
+            <div class="info-value">Normal mode uses your custom MP colors from Settings. Lite mode uses fixed country-inspired colors.</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Toggle</div>
+            <div class="info-value">Settings &gt; Additional Quality of Life &gt; Enable Marketplace Badge (OFF by default)</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Live Updates</div>
+            <div class="info-value">Changing colors in settings reflects immediately on the badge</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- qol auto-open tools -->
+    <section id="qol-autotools">
+      <div class="card">
+        <div class="card-new">New in v3.6</div>
+        <h2>Auto-Open Tools</h2>
+        <p>Automatically opens investigation tools when a new case starts, based on which marketplace folder the queue belongs to. Currently available for SAFE-T only.</p>
+        <div class="callout">Available tools: Grass, OBLT, SPOT, PeekNow</div>
+        <h4>How it works</h4>
+        <ol class="numbered-list">
+          <li>Go to Settings &gt; Additional Quality of Life &gt; Auto-Open Tools</li>
+          <li>Each tool starts empty (inactive). Click the + button to assign marketplace folders.</li>
+          <li>When a new case loads and the queue's marketplace matches an assigned folder, the tool opens automatically.</li>
+          <li>Remove a folder by clicking the X on its badge to stop auto-opening for that marketplace.</li>
+        </ol>
+        <h4>Tool locations</h4>
+        <table class="doc-table">
+          <thead><tr><th>Tool</th><th>Action</th><th>Location</th></tr></thead>
+          <tbody>
+            <tr><td>Grass</td><td>Opens URL in new tab</td><td>Claim Details iframe</td></tr>
+            <tr><td>OBLT</td><td>Opens URL in new tab</td><td>Claim Details iframe</td></tr>
+            <tr><td>SPOT</td><td>Simulates click</td><td>Claim Details iframe</td></tr>
+            <tr><td>PeekNow</td><td>Clicks button via Shadow DOM</td><td>CTPS iframe header</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- qol keywords -->
+    <section id="qol-keywords">
+      <div class="card">
+        <h2>Keyword Alerts</h2>
+        <p>Define keywords that trigger a visual alert when found anywhere in a case. Alerts fire automatically on case load.</p>
+        <ul class="feature-list">
+          <li>Add/remove keywords with enable/disable toggle per keyword</li>
+          <li>Scans all frames including sibling iframes</li>
+          <li>Glass modal alert with Acknowledge button</li>
+          <li>Three visual modes: dark glass, light glass, lite flat</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- annotations overview -->
+    <section id="annotations-overview">
+      <div class="card">
+        <h2>STAR Annotations</h2>
+        <p>Injects annotation buttons below the claim action textarea in Paragon. Buttons insert pre-written text for SAFE-T claim resolutions. Supports category-based organization with folder filtering.</p>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">Categories</div>
+            <div class="info-value">GRNT (Grant), NOGRNT (No Grant), Miscellaneous</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Folders</div>
+            <div class="info-value">Organize buttons into folders, filter by active folder via toolbar pills</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Append Mode</div>
+            <div class="info-value">Toggle to append text instead of replacing the textarea content</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- annotations editor -->
+    <section id="annotations-editor">
+      <div class="card">
+        <h2>Button Editor</h2>
+        <p>Click the extension icon to open the editor popup. Manage your annotation buttons with full CRUD operations.</p>
+        <ul class="feature-list">
+          <li>Add, edit, delete, and reorder buttons (drag and drop)</li>
+          <li>Category color pickers (GRNT, NOGRNT, Miscellaneous)</li>
+          <li>Folder management: create/delete folders</li>
+          <li>Per-button folder assignment</li>
+          <li>Import/Export as JSON</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- annotations tracking -->
+    <section id="annotations-tracking">
+      <div class="card">
+        <h2>Tracking Auto-Fill</h2>
+        <p>Automatically captures return and forward tracking data from the case and fills email blurb placeholders.</p>
+        <div class="two-col">
+          <div class="mini-card">
+            <h4>Return Tracking</h4>
+            <p>Captures carrier, tracking number, status, delivered/shipped dates from the Return Details widget.</p>
+          </div>
+          <div class="mini-card">
+            <h4>Forward Tracking</h4>
+            <p>Reads tracking data from <code>data-show-tracking-events</code> JSON attributes and expanded tracking details.</p>
+          </div>
+        </div>
+        <p>Sidebar widget on the left panel shows all captured data with editable fields and retry buttons.</p>
+      </div>
+    </section>
+
+    <!-- changelog -->
+    <section id="changelog">
+      <div class="card">
+        <h2>Changelog</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">April 22, 2026</div>
+            <div class="timeline-body">
+              <h4>Auto-Open Tools <span class="badge badge-blue">SAFE-T</span></h4>
+              <p>Automatically open Grass, OBLT, SPOT, or PeekNow when a case starts based on marketplace folder assignments.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">April 21, 2026</div>
+            <div class="timeline-body">
+              <h4>Marketplace Badge</h4>
+              <p>Colored badge with MP code next to queue name. Custom colors in normal mode, fixed colors in lite mode.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">April 21, 2026</div>
+            <div class="timeline-body">
+              <h4>Settings Reorganization</h4>
+              <p>"Keyword Alerts" section renamed to "Additional Quality of Life" to house new QoL features.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">April 2026</div>
+            <div class="timeline-body">
+              <h4>v3.6 Release</h4>
+              <p>Multi-profile system (SAFE-T, SSR, PAT), Liquid Glass theme, keyword alerts, lite mode, floating widget, Paragon dark mode.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- architecture -->
+    <section id="architecture">
+      <div class="card">
+        <h2>Architecture</h2>
+        <div class="code-block"><pre>STAR-Tracker/
+  manifest.json          MV3 config, content script rules
+  background.js          Service worker: timers, routing, storage
+  content.js             Main frame: case detection, aux, dark mode
+  attachments.js         All frames: attachments, submit, auto-open tools
+  widget.js              Floating timer on all pages
+  launcher.html/js/css   Profile selector
+  profiles/
+    registry.js          Profile definitions
+    _template/           Template for new profiles
+    safet/               SAFE-T (config, detector, popup, settings)
+    ssr/                 SSR
+    pat/                 PAT
+
+STAR-Annotations/
+  manifest.json          MV3 config
+  background.js          Opens editor on icon click
+  inject.js              All injection logic (~1069 lines)
+  editor.html/js/css     Button editor popup</pre></div>
+      </div>
+    </section>
+
+    <!-- storage -->
+    <section id="storage">
+      <div class="card">
+        <h2>Storage Keys</h2>
+        <h4>Profile-Scoped</h4>
+        <table class="doc-table">
+          <thead><tr><th>Key</th><th>Type</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>stats_[profile]</code></td><td>Object</td><td>Live AHT accumulator per queue</td></tr>
+            <tr><td><code>statsHistory_[profile]</code></td><td>Object</td><td>Daily stats archive</td></tr>
+            <tr><td><code>caseLog_[profile]</code></td><td>Object</td><td>Case-by-case log with timestamps</td></tr>
+            <tr><td><code>mpColors_[profile]</code></td><td>Object</td><td>Custom marketplace colors</td></tr>
+            <tr><td><code>autoOpenTools_safet</code></td><td>Object</td><td>Auto-open tool to folder config</td></tr>
+          </tbody>
+        </table>
+        <h4>Global</h4>
+        <table class="doc-table">
+          <thead><tr><th>Key</th><th>Type</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>activeProfile</code></td><td>String</td><td>Current profile (safet/ssr/pat)</td></tr>
+            <tr><td><code>liteMode</code></td><td>Boolean</td><td>Lite mode toggle</td></tr>
+            <tr><td><code>mpBadge</code></td><td>Boolean</td><td>Marketplace badge toggle</td></tr>
+            <tr><td><code>starKeywords</code></td><td>Array</td><td>Keyword alert list</td></tr>
+            <tr><td><code>statusTime</code></td><td>Object</td><td>Aux time accumulator</td></tr>
+            <tr><td><code>paragonDarkMode</code></td><td>Boolean</td><td>Dark mode toggle</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="doc-footer">
+      <p>STAR Tools Documentation &middot; Maintained by Sean Vargas (varseana@) &middot; SEPO</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+// theme toggle
+var toggle = document.getElementById("themeToggle");
+var html = document.documentElement;
+var saved = localStorage.getItem("star-docs-theme");
+if (saved) html.setAttribute("data-theme", saved);
+toggle.onclick = function() {
+  var next = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  html.setAttribute("data-theme", next);
+  localStorage.setItem("star-docs-theme", next);
+};
+
+// scroll spy for sidebar
+var links = document.querySelectorAll(".sidebar-link");
+var sections = [];
+links.forEach(function(l) {
+  var id = l.getAttribute("href");
+  if (id && id.startsWith("#")) sections.push({ el: document.querySelector(id), link: l });
+});
+window.addEventListener("scroll", function() {
+  var scrollY = window.scrollY + 100;
+  var active = sections[0];
+  sections.forEach(function(s) { if (s.el && s.el.offsetTop <= scrollY) active = s; });
+  links.forEach(function(l) { l.classList.remove("active"); });
+  if (active) active.link.classList.add("active");
+});
+
+// accordion
+document.querySelectorAll(".acc-header").forEach(function(h) {
+  h.onclick = function() { h.parentElement.classList.toggle("open"); };
+});
+</script>
+</body>
+</html>
