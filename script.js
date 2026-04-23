@@ -84,7 +84,7 @@ for (let i = 0; i < 30; i++) {
 
 // scroll spy with glow glider
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
+const navLinkEls = document.querySelectorAll('.nav-link');
 const glider = document.getElementById('navGlider');
 
 function moveGlider(link) {
@@ -104,12 +104,12 @@ window.addEventListener('scroll', () => {
   } else {
     sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) current = s.id; });
   }
-  navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+  navLinkEls.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
   const active = document.querySelector('.nav-link.active');
   if (active) moveGlider(active); else glider.classList.remove('visible');
 });
 
-navLinks.forEach(l => {
+navLinkEls.forEach(l => {
   l.addEventListener('mouseenter', () => moveGlider(l));
   l.addEventListener('mouseleave', () => {
     const active = document.querySelector('.nav-link.active');
