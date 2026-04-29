@@ -169,7 +169,7 @@ body {
 }
 
 /* -- two col -- */
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); margin: var(--sp-4) 0; }
+.two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--sp-4); margin: var(--sp-4) 0; }
 .mini-card {
   padding: var(--sp-5); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);
   background: var(--bg); transition: border-color var(--speed) var(--ease);
@@ -219,7 +219,7 @@ body {
 }
 
 /* -- info grid -- */
-.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); margin: var(--sp-4) 0; }
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--sp-3); margin: var(--sp-4) 0; }
 .info-item {
   padding: var(--sp-4); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);
   background: var(--bg);
