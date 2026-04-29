@@ -105,14 +105,14 @@ body {
   100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
 }
 
-/* -- ambient blobs -- */
+/* -- ambient blobs (radial gradient, no filter blur) -- */
 .blob {
-  position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0;
-  opacity: 0.12;
+  position: fixed; border-radius: 50%; pointer-events: none; z-index: 0;
+  opacity: 0.12; background: radial-gradient(circle, var(--brand-500) 0%, transparent 70%);
 }
-.blob-1 { width: 500px; height: 500px; background: var(--brand-500); top: -100px; right: -100px; }
-.blob-2 { width: 400px; height: 400px; background: var(--accent-blue); bottom: 20%; left: -80px; }
-.blob-3 { width: 350px; height: 350px; background: var(--accent-emerald); bottom: -50px; right: 20%; }
+.blob-1 { width: 500px; height: 500px; top: -100px; right: -100px; }
+.blob-2 { width: 400px; height: 400px; background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%); bottom: 20%; left: -80px; }
+.blob-3 { width: 350px; height: 350px; background: radial-gradient(circle, var(--accent-emerald) 0%, transparent 70%); bottom: -50px; right: 20%; }
 
 /* -- glass card base -- */
 .glass-card {
@@ -490,4 +490,7 @@ body {
 /* -- reduced motion -- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .particles, .blob { display: none !important; }
+  .glass-card, .nav, .btn-glass { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+  [data-tilt] { transform: none !important; }
 }

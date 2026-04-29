@@ -69,17 +69,37 @@ document.querySelectorAll('.tool-card').forEach(card => {
   card.addEventListener('mouseleave', () => { card.style.transform = ''; });
 });
 
-// particles
+// particles (canvas-based, much lighter than 30 DOM elements)
 const pc = document.getElementById('particles');
-for (let i = 0; i < 30; i++) {
-  const d = document.createElement('div');
-  d.className = 'particle';
-  d.style.left = Math.random() * 100 + '%';
-  d.style.animationDuration = 8 + Math.random() * 12 + 's';
-  d.style.animationDelay = Math.random() * 10 + 's';
-  d.style.width = d.style.height = 1 + Math.random() * 2 + 'px';
-  d.style.opacity = 0.15 + Math.random() * 0.25;
-  pc.appendChild(d);
+const canvas = document.createElement('canvas');
+canvas.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:0;width:100%;height:100%';
+pc.replaceWith(canvas);
+const ctx = canvas.getContext('2d');
+const dots = [];
+function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!reducedMotion) {
+  for (let i = 0; i < 25; i++) {
+    dots.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, r: 0.5 + Math.random() * 1.5, speed: 0.2 + Math.random() * 0.5, opacity: 0.15 + Math.random() * 0.25 });
+  }
+  const brandColor = getComputedStyle(document.documentElement).getPropertyValue('--brand-500').trim() || '#6366f1';
+  function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (const d of dots) {
+      d.y -= d.speed;
+      if (d.y < -10) { d.y = canvas.height + 10; d.x = Math.random() * canvas.width; }
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+      ctx.fillStyle = brandColor;
+      ctx.globalAlpha = d.opacity;
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(drawParticles);
+  }
+  drawParticles();
 }
 
 // scroll spy with glow glider
