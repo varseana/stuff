@@ -147,7 +147,8 @@
       <div class="card">
         <h2>Profiles</h2>
         <p>STAR Tracker supports three independent profiles. Each has its own queue map, dashboard, settings, and detector. Switching profiles is instant via the launcher.</p>
-        <table class="doc-table">
+        <div class="doc-table-wrap">
+        <div class="doc-table-wrap"><table class="doc-table">
           <thead>
             <tr><th>Profile</th><th>Program</th><th>Queues</th><th>Marketplaces</th></tr>
           </thead>
@@ -156,7 +157,8 @@
             <tr><td><span class="badge badge-green">SSR</span></td><td>Seller Support Requests</td><td>~184</td><td>21</td></tr>
             <tr><td><span class="badge badge-purple">PAT</span></td><td>Product Authenticity</td><td>~898</td><td>23</td></tr>
           </tbody>
-        </table>
+        </table></div>
+        </div>
       </div>
     </section>
 
@@ -261,7 +263,7 @@
     <section id="tracker-auto">
       <div class="card">
         <h2>Auto Features</h2>
-        <table class="doc-table">
+        <div class="doc-table-wrap"><table class="doc-table">
           <thead><tr><th>Feature</th><th>Description</th></tr></thead>
           <tbody>
             <tr><td>Auto-Accept</td><td>Automatically clicks the Accept button when a case arrives</td></tr>
@@ -269,7 +271,7 @@
             <tr><td>Auto-Increment</td><td>Clicks the Increase Task button</td></tr>
             <tr><td>Auto-Open Attachments</td><td>Opens seller attachment links in new tabs automatically</td></tr>
           </tbody>
-        </table>
+        </table></div>
       </div>
     </section>
 
@@ -315,7 +317,7 @@
           <li>Remove a folder by clicking the X on its badge to stop auto-opening for that marketplace.</li>
         </ol>
         <h4>Tool locations</h4>
-        <table class="doc-table">
+        <div class="doc-table-wrap"><table class="doc-table">
           <thead><tr><th>Tool</th><th>Action</th><th>Location</th></tr></thead>
           <tbody>
             <tr><td>Grass</td><td>Opens URL in new tab</td><td>Claim Details iframe</td></tr>
@@ -323,7 +325,7 @@
             <tr><td>SPOT</td><td>Simulates click</td><td>Claim Details iframe</td></tr>
             <tr><td>PeekNow</td><td>Clicks button via Shadow DOM</td><td>CTPS iframe header</td></tr>
           </tbody>
-        </table>
+        </table></div>
       </div>
     </section>
 
@@ -465,7 +467,7 @@ STAR-Annotations/
       <div class="card">
         <h2>Storage Keys</h2>
         <h4>Profile-Scoped</h4>
-        <table class="doc-table">
+        <div class="doc-table-wrap"><table class="doc-table">
           <thead><tr><th>Key</th><th>Type</th><th>Description</th></tr></thead>
           <tbody>
             <tr><td><code>stats_[profile]</code></td><td>Object</td><td>Live AHT accumulator per queue</td></tr>
@@ -474,9 +476,9 @@ STAR-Annotations/
             <tr><td><code>mpColors_[profile]</code></td><td>Object</td><td>Custom marketplace colors</td></tr>
             <tr><td><code>autoOpenTools_safet</code></td><td>Object</td><td>Auto-open tool to folder config</td></tr>
           </tbody>
-        </table>
+        </table></div>
         <h4>Global</h4>
-        <table class="doc-table">
+        <div class="doc-table-wrap"><table class="doc-table">
           <thead><tr><th>Key</th><th>Type</th><th>Description</th></tr></thead>
           <tbody>
             <tr><td><code>activeProfile</code></td><td>String</td><td>Current profile (safet/ssr/pat)</td></tr>
@@ -486,7 +488,7 @@ STAR-Annotations/
             <tr><td><code>statusTime</code></td><td>Object</td><td>Aux time accumulator</td></tr>
             <tr><td><code>paragonDarkMode</code></td><td>Boolean</td><td>Dark mode toggle</td></tr>
           </tbody>
-        </table>
+        </table></div>
       </div>
     </section>
 

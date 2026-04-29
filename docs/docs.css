@@ -181,16 +181,18 @@ body {
 .mini-img { width: 40px; height: 40px; border-radius: 8px; }
 
 /* -- tables -- */
-.doc-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: var(--sp-4) 0; }
+.doc-table-wrap { overflow-x: auto; margin: var(--sp-4) 0; }
+.doc-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 480px; }
 .doc-table th {
   text-align: left; padding: var(--sp-3) var(--sp-4); font-weight: 600; font-size: 11px;
   text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--border); white-space: nowrap;
 }
 .doc-table td {
   padding: var(--sp-3) var(--sp-4); border-bottom: 1px solid var(--border-subtle);
   color: var(--text-secondary);
 }
+.doc-table td:nth-child(2) { min-width: 200px; }
 .doc-table tr:hover td { background: var(--surface-hover); }
 
 /* -- badges -- */
