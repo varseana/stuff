@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - STAR Tools</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0f; color: #e0e0e0; line-height: 1.7; padding: 40px 20px; }
+    .container { max-width: 720px; margin: 0 auto; }
+    h1 { font-size: 28px; margin-bottom: 8px; color: #fff; }
+    .updated { font-size: 13px; color: #888; margin-bottom: 32px; }
+    h2 { font-size: 18px; color: #a5f3fc; margin-top: 32px; margin-bottom: 12px; }
+    p, li { font-size: 15px; color: #ccc; margin-bottom: 12px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    code { background: #1a1a2e; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, #333, transparent); margin: 40px 0; }
+    a { color: #a5f3fc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: May 27, 2026</p>
+
+    <p>This privacy policy applies to the following Chrome extensions developed by Sean V. (varseana@):</p>
+    <ul>
+      <li><strong>STAR Tracker</strong> — AHT tracking and queue management for Amazon Paragon</li>
+      <li><strong>STAR Annotations</strong> — Annotation buttons and data capture for Amazon Paragon</li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <h2>Data Collection</h2>
+    <p>These extensions do <strong>NOT</strong> collect, transmit, or share any personal data with external servers. All data remains on the user's device.</p>
+
+    <h2>Data Storage</h2>
+    <p>The following data is stored locally in the browser using <code>chrome.storage.local</code>:</p>
+    <ul>
+      <li><strong>STAR Tracker:</strong> Case timing statistics, queue configurations, AUX time records, daily/weekly metrics, user preferences (colors, toggles, layout settings)</li>
+      <li><strong>STAR Annotations:</strong> User-created annotation buttons (title, text, category, color), folder organization, category color preferences</li>
+    </ul>
+    <p>No data is sent to any external server, API, or third-party service.</p>
+
+    <h2>Third-Party Services</h2>
+    <p>These extensions do not communicate with any external servers, analytics platforms, or third-party services. All functionality operates entirely within the user's browser.</p>
+
+    <h2>Permissions Used</h2>
+    <ul>
+      <li><code>storage</code> — Save user preferences and operational data locally</li>
+      <li><code>tabs</code> (Tracker only) — Detect active Paragon tabs for script injection</li>
+      <li><code>scripting</code> (Tracker only) — Inject tracking scripts into Paragon pages</li>
+      <li><code>downloads</code> (Tracker only) — Export statistics as CSV files to the user's device</li>
+      <li><code>alarms</code> (Tracker only) — Schedule periodic tasks (daily reset, auto-export)</li>
+      <li><code>host_permissions</code> — Access Amazon Paragon pages to inject UI elements</li>
+    </ul>
+
+    <h2>Data Sharing</h2>
+    <p>We do not sell, transfer, or share user data with any third party. Data never leaves the user's browser.</p>
+
+    <h2>Data Retention</h2>
+    <p>Data persists in local browser storage until the user manually clears it (via reset/export functions) or uninstalls the extension.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>Any changes will be reflected in an updated version of this page with a revised "Last updated" date.</p>
+
+    <h2>Contact</h2>
+    <p>Developer: Sean V. — <a href="https://varseana.github.io/stuff/">varseana.github.io/stuff</a></p>
+  </div>
+</body>
+</html>
