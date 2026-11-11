@@ -5,69 +5,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy - STAR Tools</title>
   <style>
+    /* ok so this page is plain on purpose, reviewers just need to read it */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0f; color: #e0e0e0; line-height: 1.7; padding: 40px 20px; }
-    .container { max-width: 720px; margin: 0 auto; }
-    h1 { font-size: 28px; margin-bottom: 8px; color: #fff; }
-    .updated { font-size: 13px; color: #888; margin-bottom: 32px; }
-    h2 { font-size: 18px; color: #a5f3fc; margin-top: 32px; margin-bottom: 12px; }
-    p, li { font-size: 15px; color: #ccc; margin-bottom: 12px; }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 8px; }
-    code { background: #1a1a2e; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
-    .divider { height: 1px; background: linear-gradient(90deg, transparent, #333, transparent); margin: 40px 0; }
-    a { color: #a5f3fc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f7f7f5; color: #1f2328; line-height: 1.7; padding: 40px 20px; }
+    .container { max-width: 760px; margin: 0 auto; }
+    h1 { font-size: 30px; margin-bottom: 6px; }
+    .updated { font-size: 14px; color: #5f6368; margin-bottom: 28px; }
+    h2 { font-size: 20px; margin-top: 34px; margin-bottom: 10px; padding-top: 14px; border-top: 1px solid #d9d9d4; }
+    h3 { font-size: 16px; margin-top: 18px; margin-bottom: 6px; }
+    p, li { font-size: 15px; margin-bottom: 10px; }
+    ul { padding-left: 22px; }
+    code { background: #ececea; padding: 1px 6px; font-size: 13px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 14px; }
+    th, td { border: 1px solid #d9d9d4; padding: 8px 10px; text-align: left; vertical-align: top; }
+    th { background: #ececea; }
+    a { color: #0b57d0; }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: May 27, 2026</p>
+    <p class="updated">Last updated: November 11, 2026</p>
 
-    <p>This privacy policy applies to the following Chrome extensions developed by Sean V. (varseana@):</p>
+    <p>This policy applies to two Chrome extensions developed by Sean Vargas (varseana@amazon.com):</p>
     <ul>
-      <li><strong>STAR Tracker</strong> — AHT tracking and queue management for Amazon Paragon</li>
-      <li><strong>STAR Annotations</strong> — Annotation buttons and data capture for Amazon Paragon</li>
+      <li><strong>STAR Tracker</strong>: case handling time (AHT) and status (AUX) time tracking for Amazon investigators working in Amazon Paragon.</li>
+      <li><strong>STAR Annotations</strong>: annotation buttons, case data capture and email/ticket filling for Amazon Paragon.</li>
+    </ul>
+    <p>Both extensions are internal productivity tools for Amazon employees. They run only on Amazon internal tools (Amazon Paragon and, for STAR Annotations, the Amazon ticketing tool and Amazon Pulse surveys). This policy explains what data each extension handles, how it is collected, used, stored and shared, how long it is kept, and how users control it.</p>
+
+    <h2>1. Summary</h2>
+    <ul>
+      <li>By default, all data stays in the user's browser (<code>chrome.storage.local</code> / <code>chrome.storage.session</code>). Nothing is sent to the developer.</li>
+      <li>The only data that leaves the device is from STAR Tracker's optional <strong>NPT Reporting</strong> feature, which is off by default and only turns on when a user enters a team enrollment code from their manager (section 3).</li>
+      <li>No data is sold. No data is used for advertising, analytics, profiling or credit purposes. No remote code is loaded or executed.</li>
     </ul>
 
-    <div class="divider"></div>
+    <h2>2. STAR Tracker</h2>
 
-    <h2>Data Collection</h2>
-    <p>These extensions do <strong>NOT</strong> collect, transmit, or share any personal data with external servers. All data remains on the user's device.</p>
-
-    <h2>Data Storage</h2>
-    <p>The following data is stored locally in the browser using <code>chrome.storage.local</code>:</p>
+    <h3>2.1 Data handled on the device</h3>
+    <p>STAR Tracker reads the following from the Amazon Paragon pages the user works in, by means of content scripts:</p>
     <ul>
-      <li><strong>STAR Tracker:</strong> Case timing statistics, queue configurations, AUX time records, daily/weekly metrics, user preferences (colors, toggles, layout settings)</li>
-      <li><strong>STAR Annotations:</strong> User-created annotation buttons (title, text, category, color), folder organization, category color preferences</li>
+      <li>Case IDs and task IDs shown in the Paragon lobby, the queue name of each case, and when each case starts and ends.</li>
+      <li>The user's Paragon status (AUX, for example Available, Meeting, Break) and how long the user stays in each status.</li>
+      <li>The user's Amazon alias and Paragon tenant label, read from the Paragon navigation panel. Used to show a "Welcome" greeting and, only if enrolled, for NPT Reporting.</li>
     </ul>
-    <p>No data is sent to any external server, API, or third-party service.</p>
+    <p>From this it computes per-queue and per-marketplace case counts, average handling time, daily and weekly goals, and status time totals. It also stores the user's settings (queue targets, colors, toggles, work days, export schedule). It does not read case content such as customer names, addresses, messages, attachments or payment information.</p>
 
-    <h2>Third-Party Services</h2>
-    <p>These extensions do not communicate with any external servers, analytics platforms, or third-party services. All functionality operates entirely within the user's browser.</p>
+    <h3>2.2 How it is used</h3>
+    <p>Only to show the user their own statistics in the extension popup and floating widget, and to let the user export them.</p>
 
-    <h2>Permissions Used</h2>
+    <h3>2.3 Storage and retention</h3>
     <ul>
-      <li><code>storage</code> — Save user preferences and operational data locally</li>
-      <li><code>tabs</code> (Tracker only) — Detect active Paragon tabs for script injection</li>
-      <li><code>scripting</code> (Tracker only) — Inject tracking scripts into Paragon pages</li>
-      <li><code>downloads</code> (Tracker only) — Export statistics as CSV files to the user's device</li>
-      <li><code>alarms</code> (Tracker only) — Schedule periodic tasks (daily reset, auto-export)</li>
-      <li><code>host_permissions</code> — Access Amazon Paragon pages to inject UI elements</li>
+      <li>Stored locally in <code>chrome.storage.local</code> on the user's device.</li>
+      <li>Today's live counters reset every day. Daily history (when "Save History" is on) and logs are kept on the device; logs older than 30 days are cleaned up automatically.</li>
+      <li>The user can delete data at any time with the reset buttons in the extension. Uninstalling the extension removes all of its stored data.</li>
     </ul>
 
-    <h2>Data Sharing</h2>
-    <p>We do not sell, transfer, or share user data with any third party. Data never leaves the user's browser.</p>
+    <h3>2.4 Exports</h3>
+    <p>The user can export their statistics as Excel (.xlsx) and CSV files, manually or on a schedule they choose. Files are saved to the user's own Downloads folder through the Chrome downloads API. Nothing is uploaded when exporting.</p>
 
-    <h2>Data Retention</h2>
-    <p>Data persists in local browser storage until the user manually clears it (via reset/export functions) or uninstalls the extension.</p>
+    <h2>3. NPT Reporting (STAR Tracker, optional, opt-in)</h2>
+    <p>NPT (Non-Productive Time) Reporting lets a team manager see weekly non-productive time totals for the members of their team. It is <strong>off by default</strong>.</p>
 
-    <h2>Changes to This Policy</h2>
-    <p>Any changes will be reflected in an updated version of this page with a revised "Last updated" date.</p>
+    <h3>3.1 How it is turned on and off</h3>
+    <ul>
+      <li>It turns on only when the user enters a valid team enrollment code (given by their manager) in the extension Settings, under "NPT Reporting".</li>
+      <li>The user can turn it off at any time with the "Disable reporting" button in the same screen. From that moment nothing else is uploaded.</li>
+      <li>Users who never enroll send no data at all to any server.</li>
+    </ul>
 
-    <h2>Contact</h2>
-    <p>Developer: Sean V. — <a href="https://varseana.github.io/stuff/">varseana.github.io/stuff</a></p>
+    <h3>3.2 What is uploaded</h3>
+    <table>
+      <tr><th>Data</th><th>Example</th><th>Why</th></tr>
+      <tr><td>Amazon alias (auto-detected from Paragon)</td><td>varseana</td><td>To show the user's row to their manager</td></tr>
+      <tr><td>Paragon tenant label</td><td>TRMS (178)</td><td>To tell teams and regions apart</td></tr>
+      <tr><td>Work date and active profile</td><td>2026-11-11, SAFE-T</td><td>To group totals by day and team type</td></tr>
+      <tr><td>Seconds spent in each status that day</td><td>Meeting: 1800</td><td>To compute non-productive time</td></tr>
+      <tr><td>Team enrollment code</td><td>TEAM-CODE</td><td>To assign the row to the right team</td></tr>
+    </table>
+    <p>No case IDs, case content, customer data, keystrokes, mouse activity, screenshots or browsing history are uploaded.</p>
+
+    <h3>3.3 When and how</h3>
+    <p>While enrolled, the extension updates that day's totals about every 2 minutes (the same row for the day is overwritten, not duplicated). Data is sent over HTTPS to the team's reporting backend, a Supabase project (supabase.com, a database hosting provider). To be allowed to write, the extension creates an anonymous Supabase session on the device; it holds no email or password, only a session token stored in <code>chrome.storage.local</code>.</p>
+
+    <h3>3.4 Who can see it</h3>
+    <ul>
+      <li>The managers of the user's team and the dashboard administrator, through a private dashboard that requires a login approved by the administrator. Database access rules (row level security) limit each manager to their own team.</li>
+      <li>Supabase acts only as the hosting provider (data processor) for the database. The data is not shared with any other party.</li>
+    </ul>
+
+    <h3>3.5 Retention and deletion</h3>
+    <p>Uploaded rows are kept in the team's database for as long as the team uses NPT reporting, so managers can review past weeks. A user can ask their manager or the developer (varseana@amazon.com) to delete their rows at any time. Disabling reporting stops any new uploads.</p>
+
+    <h2>4. STAR Annotations</h2>
+
+    <h3>4.1 Data handled on the device</h3>
+    <ul>
+      <li>Annotation buttons, folders, workflows, carrier name mappings and display settings created by the user.</li>
+      <li>Case details read from the Paragon case page the user has open: order and claim IDs, seller ID and name, ASIN, return and forward tracking (carrier, tracking number, status, dates), refund and reimbursement amounts and dates, and the buyer return reason. These are used to calculate return windows and refund timing, and to fill the user's annotation and email templates.</li>
+    </ul>
+
+    <h3>4.2 Storage and retention</h3>
+    <ul>
+      <li>Everything is stored only on the device. Case details are replaced when the user opens another case. Ticket data in the side panel is deleted automatically after 24 hours.</li>
+      <li>The keyword highlight groups the user creates (names, colors and words to highlight) are saved with <code>chrome.storage.sync</code>, so Chrome can sync them across the user's own browsers if Chrome sync is turned on. No case data is saved this way.</li>
+      <li>User-created buttons and settings stay until the user deletes them or uninstalls the extension. Users can export and import their own button library as a file.</li>
+    </ul>
+
+    <h3>4.3 Sharing</h3>
+    <p>STAR Annotations does not send any data to the developer or to any external server. When the user clicks "Open and Fill" in the side panel, the extension opens an Amazon internal page (the Amazon ticketing tool at t.corp.amazon.com or an Amazon Pulse survey at pulse.amazon) and types the case details into that form so the user can review and submit it. Those are Amazon's own internal tools, and the data only reaches them when the user submits the form.</p>
+
+    <h2>5. Permissions</h2>
+    <ul>
+      <li><code>storage</code>: save the data and settings described above on the device.</li>
+      <li><code>tabs</code>: find open Amazon Paragon tabs so the tracker targets the right tab, and open tool or ticket pages the user asks for.</li>
+      <li><code>scripting</code>: inject the tracking or data capture scripts into Amazon Paragon tabs (for example after the extension restarts), and fill forms the user asked to fill.</li>
+      <li><code>downloads</code> (STAR Tracker): save exports to the user's Downloads folder.</li>
+      <li><code>alarms</code> (STAR Tracker): run periodic tasks such as the daily reset, scheduled exports and status time updates.</li>
+      <li><code>sidePanel</code> and <code>contextMenus</code> (STAR Annotations): show the side panel and the right-click entry that opens it.</li>
+      <li><code>webNavigation</code> (STAR Annotations): notice when Paragon changes page without a full reload, so the user's keyword highlights are applied again.</li>
+      <li>Host access: Amazon Paragon (paragon-na, paragon-eu and paragon-fe.amazon.com) and the Paragon case widget domains (prod-na and prod-eu.widgets.ctps.amazon.dev) to read the data described above; *.supabase.co (STAR Tracker) only for enrolled NPT Reporting users; t.corp.amazon.com and pulse.amazon (STAR Annotations) only to fill forms the user asked to fill.</li>
+    </ul>
+
+    <h2>6. What we do not do</h2>
+    <ul>
+      <li>We do not sell or transfer user data to third parties.</li>
+      <li>We do not use or transfer user data for purposes unrelated to the extensions' single purpose.</li>
+      <li>We do not use or transfer user data to determine creditworthiness or for lending purposes.</li>
+      <li>We do not use analytics, advertising or tracking services, and we do not load remote code.</li>
+    </ul>
+
+    <h2>7. Changes to this policy</h2>
+    <p>Changes are published on this page with a new "Last updated" date.</p>
+
+    <h2>8. Contact</h2>
+    <p>Sean Vargas, varseana@amazon.com. Project page: <a href="https://varseana.github.io/stuff/">varseana.github.io/stuff</a></p>
   </div>
 </body>
 </html>
