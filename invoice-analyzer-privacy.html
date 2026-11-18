@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Invoice Analyzer</title>
+  <meta name="description" content="Privacy policy for the Invoice Analyzer Chrome extension.">
+  <style>
+    /* misma pagina plana que la de star tools, los reviewers solo necesitan leerla */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f7f7f5; color: #1f2328; line-height: 1.7; padding: 40px 20px; }
+    .container { max-width: 760px; margin: 0 auto; }
+    h1 { font-size: 30px; margin-bottom: 6px; }
+    .updated { font-size: 14px; color: #5f6368; margin-bottom: 28px; }
+    h2 { font-size: 20px; margin-top: 34px; margin-bottom: 10px; padding-top: 14px; border-top: 1px solid #d9d9d4; }
+    p, li { font-size: 15px; margin-bottom: 10px; }
+    ul { padding-left: 22px; }
+    code { background: #ececea; padding: 1px 6px; font-size: 13px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 14px; }
+    th, td { border: 1px solid #d9d9d4; padding: 8px 10px; text-align: left; vertical-align: top; }
+    th { background: #ececea; }
+    a { color: #0b57d0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: November 18, 2026</p>
+
+    <p>This policy applies to <strong>Invoice Analyzer</strong>, a Chrome extension developed by Sean Vargas (varseana@amazon.com). Invoice Analyzer is an internal productivity tool for Amazon investigators who review supplier invoices. It reads an invoice, extracts its data, checks it against official Brazilian tax portals, scores it against the invoice validation SOP and translates it on request.</p>
+
+    <h2>1. Summary</h2>
+    <ul>
+      <li>Invoices are read inside the user's browser. Loading an invoice does not upload it anywhere.</li>
+      <li>The only data that leaves the device is the invoice text the user chooses to translate, sent to the MyMemory translation service when the user clicks Translate.</li>
+      <li>No data is sent to the developer. No data is sold or used for advertising, analytics, profiling or credit purposes.</li>
+    </ul>
+
+    <h2>2. Data the extension handles</h2>
+    <ul>
+      <li><strong>Invoice files</strong> the user loads (PDF, JPG, PNG) and the text extracted from them. Invoices can contain business and personal names, addresses, tax IDs (such as CNPJ, CPF, RFC or VAT numbers), amounts, dates and product lines.</li>
+      <li><strong>Government portal pages.</strong> On the official Brazilian NF-e portal (<code>nfe.fazenda.gov.br</code>) and the Receita Federal CNPJ lookup (<code>solucoes.receita.fazenda.gov.br</code>), the extension reads the result page the user opens, to compare it with the invoice. It does not solve captchas and does not submit forms; the user does both.</li>
+      <li><strong>Records the user saves</strong> in the Polyglot forms: translation error reports and incorrect transfer records.</li>
+      <li><strong>User settings:</strong> reference links and email templates the user creates.</li>
+    </ul>
+
+    <h2>3. How it is used</h2>
+    <p>Only to show the extracted data, flags and comparison results to the user, to translate text when asked, and to keep the user's own records and settings. The extension has no other purpose.</p>
+
+    <h2>4. Storage and retention</h2>
+    <table>
+      <tr><th>Data</th><th>Where</th><th>How long</th></tr>
+      <tr><td>Loaded invoice and its extracted text</td><td>Memory of the extension window</td><td>Until the user loads another invoice or closes the window. It is not saved.</td></tr>
+      <tr><td>Access key and tax IDs passed to the portal tab, and the portal results read</td><td><code>chrome.storage.local</code></td><td>Until the user clears the loaded invoice.</td></tr>
+      <tr><td>Translation error reports and incorrect transfer records</td><td>IndexedDB in the user's browser</td><td>Until the extension is removed.</td></tr>
+      <tr><td>Reference links and email templates</td><td><code>chrome.storage.local</code></td><td>Until the user deletes them in the extension or removes the extension.</td></tr>
+    </table>
+    <p>All of this stays on the user's device. Removing the extension from Chrome deletes all of it.</p>
+
+    <h2>5. Data sent outside the browser</h2>
+    <p>When, and only when, the user clicks Translate, the text extracted from the invoice is sent to the MyMemory translation service (<code>api.mymemory.translated.net</code>) to receive the translation. The request carries no cookies, no referrer and no account data. MyMemory (<a href="https://mymemory.translated.net/">mymemory.translated.net</a>) handles that text under its own terms. Nothing else is transmitted.</p>
+
+    <h2>6. Sharing</h2>
+    <p>The developer does not receive, sell, rent or share any user data. Apart from the translation request described in section 5, no data is passed to any third party.</p>
+
+    <h2>7. Changes</h2>
+    <p>If this policy changes, the date at the top of this page will be updated.</p>
+
+    <h2>8. Contact</h2>
+    <p>Questions about this policy: <a href="mailto:varseana@amazon.com">varseana@amazon.com</a></p>
+  </div>
+</body>
+</html>
